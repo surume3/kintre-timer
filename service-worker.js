@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.ae97ed1c466197eb96306641ad5e9454.js"
+  "/kintre-timer/precache-manifest.5ae483f65b400bc58c1299de874c0de7.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "kintre-vue-pwa"});
