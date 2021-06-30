@@ -26,5 +26,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f71d20196d4caf35b6a670db8c70b03d",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "707adec0b7d4d55ac476d4fbcf42ef8d",
+    "url": "/vue.config.js"
   }
 ]);
