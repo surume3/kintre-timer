@@ -1,0 +1,20 @@
+{
+  "name": "筋トレタイマー",
+  "short_name": "kintre-timer",
+  "start_url": "/kintre-timer/",
+  "display": "standalone",
+  "theme_color": "#4DBA87",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "/kintre-timer/img/icons/cthulhu_deep_ones.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/kintre-timer/img/icons/cthulhu_deep_ones_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
