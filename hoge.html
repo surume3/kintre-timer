@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><title>デモ</title>
+  <!--   jQuery・bootstrapライブラリ読み込み -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!--  /jQuery・bootstrapライブラリ読み込み -->
+
+  <!--  公式からダウンロードしてね -->
+  <link href="https://appsol-one.com/custom/00-page/top/nes.min.css" rel="stylesheet" />
+  <script src="https://appsol-one.com/custom/00-page/top/typed.js"></script>
+  <!--  /公式からダウンロードしてね -->
+
+</head>
+<body>
+
+<div class="w-100 flex justify-center items-center p-2 h-full" >
+  <div class="nes-container w-full is-dark is-rounded text-center" 
+      style="border-image-repeat: stretch; width: 100% !important; text-align: center; padding-left:5px !important; padding-right:5px !important;">
+	<span id="typed-sample" ></span>
+
+  </div>
+</div>
+
+
+<div class="w-100 flex justify-center items-center p-2 h-full" >
+  <div class="nes-container w-full is-dark is-rounded text-center" 
+	style="border-image-repeat: stretch; width: 100% !important; text-align: center; padding-left:5px !important; padding-right:5px !important;">
+
+  <p style="margin-top:25px; padding: 15px;">
+	なんと　碧（あお）が　おきあがり　なかまになりたそうに　こちらをみている！<br/>なかまに　してあげますか？
+  </p>
+  <div style="margin-top: 15px;"> 
+    <label>
+      <input type="radio" class="nes-radio is-dark" name="answer-sample" value="ok" checked />
+	<span>はい</span>
+    </label>
+    <label>
+	<input type="radio" class="nes-radio is-dark" name="answer-sample"  value="ng" />
+	<span>いいえ</span>
+    </label>
+  </div>
+	
+  <button type="button" class="nes-btn is-primary mt-3 " onclick="clickSampleDecide()">
+	けってい
+  </button>
+</div>
+
+
+  <div class="nes-dialog is-dark is-rounded" id="dialog-ok" style="display: none;">
+    <form method="dialog">
+	  <p>ありがとうございます！　がんばります！！！！！！！</p>
+    	<menu class="dialog-menu">
+	      <button type="button" class="nes-btn is-error" onclick="closeCheeringModal()">閉じる</button>
+	   </menu>
+    </form>
+  </div>
+
+  <div class="nes-dialog is-dark is-rounded" id="dialog-ng" style="display: none;">
+	<form method="dialog">
+		<p>そんなこと　いわないで<br/>がんばりますので　なにとぞ　よろしく　おねがいします！</p>
+		<menu class="dialog-menu">
+		  <button type="button" class="nes-btn is-error" onclick="closeCheeringModal()">閉じる</button>
+	    </menu>
+   </form>
+  </div>
+
+</div>
+
+<div id="fullOverlay" style="display: none;"></div>
+	  
+<!-- ############ javascript  ############ -->
+<script type="text/javascript">
+$(function(){
+
+// 文章のアニメーションセット
+var typed = new Typed('#typed-sample', {
+	strings: [
+	'こんにちは  碧（あお）と申します。<br/>当サイトを　ご覧いただき　ありがとうございます。WEBエンジニアとしての　知識や経験を　発信していきますので　ごゆっくり　ご覧ください。',
+　　　　],	
+	typeSpeed: 70,
+	backSpeed: 0,
+	startDelay: 1000,
+	loop: true,
+	smartBackspace: true,
+});
+
+});
+
+// けっていボタン押下時
+function clickSampleDecide() {
+    if ($('input:radio[name="answer-sample"]:checked').val() == 'ok') {
+	$('#dialog-ok').fadeIn();
+	$('#fullOverlay').fadeIn();
+    }  else {
+	$('#dialog-ng').fadeIn();
+	$('#fullOverlay').fadeIn();
+    }
+  }
+
+// モーダルの閉じるボタン押下時
+function closeCheeringModal() {
+	$('#dialog-ok').fadeOut();
+	$('#dialog-ng').fadeOut();
+	$('#fullOverlay').fadeOut();
+}
+
+
+</script>
+<!-- ############ /javascript  ############ -->
+
+
+<!-- ############  style  ############ -->
+<style>
+
+.nes-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 101;
+}
+
+#fullOverlay{
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(100, 100, 100, .8);
+  z-index: 100;
+}
+
+@media only screen and (max-width: 767px){
+.nes-dialog {
+	width: 100%;	
+	text-align: left;
+}
+}
+
+</style>
+<!-- ############  /style  ############ -->
+</body>
+</html>
