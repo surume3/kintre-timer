@@ -48,7 +48,7 @@ export default {
   methods: {
     count: function() {
       if (this.work <= 0) {
-        if (this.set <= 0) {
+        if (this.set <= 1) {
           this.reset()
         } else if (this.rest >= 1) {
           this.rest--
